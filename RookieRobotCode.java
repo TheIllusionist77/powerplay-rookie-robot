@@ -15,9 +15,7 @@ import org.firstinspires.ftc.robotcore.external.navigation.Orientation;
 @TeleOp(name = "Rookie Robot TeleOp")
 public class RookieRobotCode extends LinearOpMode {
     double UNCLAMPED = 0.25, CLAMPED = 0;
-
     boolean prev, curr;
-    boolean slide = false;
 
     DcMotor fl, bl, fr, br, left_slide, right_slide;
     BNO055IMU imu;
@@ -37,8 +35,7 @@ public class RookieRobotCode extends LinearOpMode {
 
         fl.setDirection(DcMotorSimple.Direction.REVERSE);
         bl.setDirection(DcMotorSimple.Direction.REVERSE);
-        left_slide.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        right_slide.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        right_slide.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
 
         clamp = hardwareMap.get(Servo.class, "clamp_servo");
         clamp.setPosition(CLAMPED);
@@ -80,25 +77,17 @@ public class RookieRobotCode extends LinearOpMode {
                 clamp.setPosition(UNCLAMPED);
             }
 
-            if (gamepad1.left_bumper && slide) {
-                slide = false;
-                left_slide.setPower(-1);
-                right_slide.setPower(-1);
-                Thread.sleep(350);
-                left_slide.setPower(0);
-                right_slide.setPower(0);
-            } else if (!prev && curr && !slide) {
-                slide = true;
-                left_slide.setPower(1);
-                right_slide.setPower(1);
-                Thread.sleep(700);
-                left_slide.setPower(0);
-                right_slide.setPower(0);
+            if (!prev && curr) {
+                right_slide.setTargetPosition(1500);
+                right_slide.setPower(0.5);
+                right_slide.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+            } else if (gamepad1.left_bumper) {
+                right_slide.setTargetPosition(0);
+                right_slide.setPower(0.5);
+                right_slide.setMode(DcMotor.RunMode.RUN_TO_POSITION);
             }
 
             prev = curr;
-            telemetry.addData("Slide Raised", slide);
-            telemetry.update();
         }
     }
 
