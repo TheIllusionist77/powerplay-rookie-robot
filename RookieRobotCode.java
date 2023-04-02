@@ -15,6 +15,7 @@ import org.firstinspires.ftc.robotcore.external.navigation.Orientation;
 @TeleOp(name = "Rookie Robot TeleOp")
 public class RookieRobotCode extends LinearOpMode {
     double UNCLAMPED = 0.25, CLAMPED = 0;
+    double UNLIFTED = 1, LIFTED = 0.8;
     boolean prev, curr;
 
     DcMotor fl, bl, fr, br, left_slide, right_slide;
@@ -24,7 +25,7 @@ public class RookieRobotCode extends LinearOpMode {
 
     @Override
     public void runOpMode() throws InterruptedException {
-        Servo clamp;
+        Servo clamp, rotate;
 
         fl = hardwareMap.get(DcMotor.class, "front_left_motor");
         bl = hardwareMap.get(DcMotor.class, "back_left_motor");
@@ -35,8 +36,11 @@ public class RookieRobotCode extends LinearOpMode {
 
         fl.setDirection(DcMotorSimple.Direction.REVERSE);
         bl.setDirection(DcMotorSimple.Direction.REVERSE);
+        left_slide.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         right_slide.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
 
+        rotate = hardwareMap.get(Servo.class, "rotate_servo");
+        rotate.setPosition(UNLIFTED);
         clamp = hardwareMap.get(Servo.class, "clamp_servo");
         clamp.setPosition(CLAMPED);
 
@@ -78,16 +82,27 @@ public class RookieRobotCode extends LinearOpMode {
             }
 
             if (!prev && curr) {
-                right_slide.setTargetPosition(1500);
-                right_slide.setPower(0.5);
+                left_slide.setTargetPosition(2000);
+                right_slide.setTargetPosition(2000);
+                left_slide.setPower(1);
+                right_slide.setPower(1);
+                left_slide.setMode(DcMotor.RunMode.RUN_TO_POSITION);
                 right_slide.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+                rotate.setPosition(LIFTED);
             } else if (gamepad1.left_bumper) {
+                left_slide.setTargetPosition(0);
                 right_slide.setTargetPosition(0);
-                right_slide.setPower(0.5);
+                left_slide.setPower(1);
+                right_slide.setPower(1);
+                left_slide.setMode(DcMotor.RunMode.RUN_TO_POSITION);
                 right_slide.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+                rotate.setPosition(UNLIFTED);
             }
 
             prev = curr;
+            telemetry.addData("Left Slide Height", left_slide.getCurrentPosition());
+            telemetry.addData("Right Slide Height", right_slide.getCurrentPosition());
+            telemetry.update();
         }
     }
 
