@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "ftc-robotics-383722",
+  "private_key_id": "7147c409ec5225fadd45cdb74d9d39c8c38bc732",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCWuKNCJwb/td19\n0rIeHPArGTCZCpGb/Ugrv9aKv69bvuLp1yaGM3G6AE7KZ2adynQjweayyoHkJjRP\nbqrItoYYtaI/uGRR6TC9woGWh9t5AmswEIX9eD3Aseb/ZrAu4acavYRc+aKFkwRK\nHFBt6IKHarWjv8s0ny0T9G6jIofh+jgYSpfa7G2l+FaO0qLcTGgS+28EbXL4FK8S\n1XdbIlIEgOyWmii8GfpD0sC5BjJnUxOa5K4E4DRXoXcCUhByjB+naBT5tzlLEFLc\nu2mL3WgT8AUNM+PbxBU8DLpJLG4dXMd4VrosCPF163FCzAlSTWXYcNYm9hAipg2k\naCKAenD7AgMBAAECggEAH6FQ9a2ODPTkLicc5S/qgQjwx3VN2IAfeLryMb0HdogJ\nQ8y4k3pRWBj/b/+iK+QUWnqzSPsxpikUWkUdxzBy1NWtXpT6TKxU48Xhfy80smD9\nEKGvFOH6h6luElRBDh2h/X0fPYnP/xs6z7jAckhUuEl/JAW4hesPwTvPSiIRhS00\nxhWK5J0TnvQlUon7RD1yP40bVhvwKVUQX7OuCm4O7W9j9qYkB7g0MPkc3Da2CY7b\nZW1gdvnBBKZKFZ36Rq48PoG35tj/Ij6LC753yythiddvSF8J4cg0Z7NCFMXB0xED\nC8Wo2NsVcoxcwOWTS7ip3zTDoyi02rl3aBnBMDyJrQKBgQDJnXfuLjhB5iFLab6+\nAyPiRzuol69AK3erfgxmqn8xnlGutcGRGwbcxS229z9/sNPsUaxgBil9U96hxObA\nXNA+oZcZ7vPd5m9QcR3NnG8AvXLDjKzVqitysazsIJXwccWzBwf0E6cId3Bbpxrb\ndL0UFqnSE1Jf3ICyn0gYpZHRzQKBgQC/YLFra0cxsiBRzEuUZZe/W6cAsK1K2iQg\nCURwnMGXEb0dgkAnd5l8wUjSJwqRPatjoCFdmIWYGXyNtc9OZb5bIbf04ThEtUcX\ngQobLvvOXlEVd10fux67ZChlq+F7j5k8ptOr7KkoIN9nvpYQqi6dm/FrlmbZq+10\n+agBG2Gl5wKBgQCkrWQ6PbJh0TC8wkC0PyheOMS37j2M8nQqtSg362c9Bg294GOc\nvDCcvsmaOtW43Jwc2JEtVZsp7QlZpNS9ppHJtn8PBahXRVMCp4IqYW4hcpx8sTiy\nxO38HrgZnnwaCzPqCQIsEKlMNxKlKha7zdxqviAzoOiVuCu+um9PAl3auQKBgC4j\naaK0Il3gy9nsnuwP8h24QvLvpVe+b6cplM5xfFqndCiBFmZtdxuUnbHMp8eMTp2e\nJW0jMFITEuw3QNttvA7MekUXZzFpYtJP0dfr49lE89dxB4p22lnjM7oPTjUz0YXF\n0pJIZB/AjRu93v/1h3eH+RQvFmyz/nONHOvnZgtRAoGANjXBlXhwmawO5tLAvgUF\n0gx9LqDcM6xpBxaKsnm1EufPEHrk1p/QkLQxc9V9Jput3t7pKl25tdjZ7431yGWK\ndwfO6TEvJIMTgP8XbmnlBaV5BtDI2oxXZgcD/CjkVAFPOhczth7KQaMHxr8TmsIG\n38ZeaNAzC4I0m+kiftY1xRM=\n-----END PRIVATE KEY-----\n",
+  "client_email": "ftc-robotics-service-account@ftc-robotics-383722.iam.gserviceaccount.com",
+  "client_id": "109954281597566290966",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/ftc-robotics-service-account%40ftc-robotics-383722.iam.gserviceaccount.com"
+}
